@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: effective_backend
+    restart: always
+    networks:
+      - effective_network
+
+  nginx:
+    image: nginx:${NGINX_VERSION:-stable-alpine}
+    container_name: effective_nginx
+    ports:
+      - "${HOST_PORT:-80}:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+    networks:
+      - effective_network
+    restart: always
+
+networks:
+  effective_network:
+    driver: bridge
