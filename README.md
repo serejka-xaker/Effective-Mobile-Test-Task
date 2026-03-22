@@ -32,8 +32,8 @@
 
 ### 1. Клонируйте репозиторий
 ```bash
-git clone https://github.com/serejka-xaker/Web-Server-Nginx.git
-cd Web-Server-Nginx
+git clone https://github.com/serejka-xaker/Effective-Mobile-Test-Task.git
+cd Effective-Mobile-Test-Task
 ```
 
 ### 2. Создайте файл .env в корне проекта для настройки портов
